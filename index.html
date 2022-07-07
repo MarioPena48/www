@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>EDOTEC Ecología en Domótica y Tecnología</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900">
+    <link rel="stylesheet" href="assets/css/slider01.compiled.css">
+    <link rel="stylesheet" href="assets/css/untitled.css">
+</head>
+
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="54">
+    <header class="masthead">
+        <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav" style="background: linear-gradient(-86deg, black, rgb(19,19,19) 0%, #0091ea 0%, rgb(120,120,120) 100%, rgb(79,79,79) 100%, rgb(238,238,238) 100%, rgb(116,116,116) 100%, rgb(180,180,180) 100%);">
+            <div class="container"><a class="navbar-brand" href="#page-top">EDOTEC</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto text-uppercase">
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services" style="transform: perspective(0px);">¿Que hacemos?</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">Ruta de instalación</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team">Extra</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">ContactANOS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header><div id="app" class="wrapper" v-cloak v-bind:class="{'is-previous': isPreviousSlide, 'first-load': isFirstLoad}">
+            <div class="slide-wrapper" 
+                 v-for="(slide, index) in slides" 
+                 v-bind:class="{ active: index === currentSlide }"
+                 v-bind:style="{ 'z-index': (slides.length - index), 'background-image': 'url(' + slide.bgImg + ')' }">
+                <div class="slide-inner">
+                    <div class="slide-bg-text">
+                        <h1>{{ slide.headlineFirstLine }}</h1>
+                        <p class="pleft">{{ slide.headlineSecondLine }}</p>
+                    </div>
+                    <div class="slide-rect-filter">
+                        <div class="slide-rect" v-bind:style="{'border-image-source': 'url(' + slide.rectImg + ')'}"></div>
+                    </div>
+                    <div class="slide-content">
+                        <h1 class="slide-content-text"><p>{{ slide.headlineFirstLine }}</p><p>{{ slide.headlineSecondLine }}</p></h1><a class="slide-content-cta" href="#portfolio">Conócenos</a></div>
+                    <h2 class="slide-side-text"><span>{{ slide.sublineFirstLine }} / </span><span>{{ slide.sublineSecondLine }}</span></h2></div>
+            </div>
+        <div class="controls-container">
+            <button class="controls-button" 
+                    v-for="(slide, index) in slides"
+                    v-bind:class="{ active: index === currentSlide }"
+                    v-on:click="updateSlide(index)">{{ slide.headlineFirstLine }} {{ slide.headlineSecondLine }}</button>
+        </div>
+        <div class="pagination-container">
+            <span class="pagination-item"
+                  v-for="(slide, index) in slides"
+                  v-bind:class="{ active: index === currentSlide }"
+                  v-on:click="updateSlide(index)"></span>
+        </div>
+    </div>
+    <section class="bg-primary" id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase section-heading">SERVICIOS</h2>
+                    <h3 class="text-muted section-subheading">Estos son algunos de nuestros servicios generales, pero podemos hacerte el traje a la medida</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4 portfolio-item"><a class="portfolio-link" href="#portfolioModal1" data-bs-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                        </div><img class="img-fluid" src="assets/img/iluminacion-inteligente-en-casa.jpg">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Iluminación Inteligente<br></h4>
+                        <p class="text-muted paragra">Controla dispositivos de&nbsp; iluminación en tu hogar, crea escenarios personalizados,&nbsp; por medio de control por voz y aplicación de celular o tableta.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 portfolio-item"><a class="portfolio-link" href="#portfolioModal2" data-bs-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                        </div><img class="img-fluid" src="assets/img/ir-controller-smart.jpg">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Control de infrarrojos</h4>
+                        <p class="text-muted paragra">Elimina los controles remotos unificando todos como: TV,&nbsp; aire acondicionado, cortinas y contrólalo mediante voz y aplicación en tu celular o tableta.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 portfolio-item"><a class="portfolio-link" href="#portfolioModal3" data-bs-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                        </div><img class="img-fluid" src="assets/img/cortinas-inteligentes.jpg">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Cortinas y cerraduras inteligentes<br></h4>
+                        <p class="text-muted paragra">Automatizamos tus&nbsp; cortinas sin necesidad de cambiar las existentes. amplias opciones de cerraduras.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 portfolio-item"><a class="portfolio-link" href="#portfolioModal4" data-bs-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                        </div><img class="img-fluid" src="assets/img/sensores-movimient.jpg">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Todo tipo de sensores<br></h4>
+                        <p class="text-muted paragra">Agregamos a tus proyectos sensores de todo tipo: movimiento, temperatura, humedad,&nbsp; gas,&nbsp; sonido,&nbsp; barreras laser,&nbsp; apertura puertas y ventanas</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 portfolio-item"><a class="portfolio-link" href="#portfolioModal5" data-bs-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                        </div><img class="img-fluid" src="assets/img/geolocalizacion.jpg">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Geolocalización y seguridad<br></h4>
+                        <p class="text-muted paragra">Sistema de localización en tiempo real de personas, activación de controles de confort en tu hogar y sistemas de alarmas</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 portfolio-item"><a class="portfolio-link" href="#portfolioModal6" data-bs-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                        </div><img class="img-fluid" src="assets/img/ahorro-agua.png">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Control de consumos de agua, energía y gas</h4>
+                        <p class="text-muted paragra">Sistema de monitoreo de servicios con sensores avanzados que dan la posibilidad de medir el consumo de servicios</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </section>
+    <section id="solotexto">
+        <div data-bss-parallax-bg="true" style="height: 100%;width: 100%;background: url(&quot;assets/img/casa-domotica.jpg&quot;) center / cover;">
+            <div class="container soloTexto">
+                <div class="row">
+                    <div class="col-12 text-center mx-auto">
+                        <div class="peque">
+                            <hr>
+                            <h2 class="text-start"><em>Pensamos en...</em></h2>
+                            <h2><em>Creación&nbsp;de </em>ecosistemas inteligentes<em> con automatización de&nbsp;configuración alta/media y fácil de configurar implementando la unificación de&nbsp;diferentes altavoces inteligentes </em>(Alexa, Google Assistance)<em> y&nbsp;sistemas inteligentes.</em><br></h2>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services">
+        <div class="container contenedor-opacidad">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase section-heading">Edotec</h2>
+                    <p class="izquierda">Buscamos automatizar, integrar y dar soluciones en tecnología hasta la puerta de tu hogar, oficina o negocio. Nuestro equipo de especialistas en Arquitectura, Ingeniería electrónica y Diseñadores se encargarán de hacer el traje a la medida de la mano con la optimización de recursos adaptado a tu presupuesto. ¡Contáctanos y te ayudamos a dar solución a tu proyecto!.&nbsp;<br></p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-home fa-stack-1x fa-inverse"></i></span>
+                    <h4 class="section-heading"><strong>Ecosistemas Inteligentes</strong><br></h4>
+                    <p class="text-muted white">Por medio de la automatización (domótica), a precios justos y competitivos . Además, creamos ecosistemas inteligentes de acuerdo a tus necesidades gracias a nuestra infraestructura de hardware y software. Ofreciendo el ahorro, confort y control masivo de cualquier espacio (hogar).<br></p>
+                </div>
+                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-wifi fa-stack-1x fa-inverse"></i></span>
+                    <h4 class="section-heading"><strong>Experiencias Innovadoras</strong><br></h4>
+                    <p class="text-muted white">Creamos experiencias para los usuarios Instalamos los sistemas, de manera única y lograr que nuestros usuarios puedan utilizarlos bajo una experiencia<br>innovadora personalizada. Tenemos diferentes formas de automatizar tu hogar con dispositivos de tu preferencia y productos fabricados por nosotros.<br></p>
+                </div>
+                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-lock fa-stack-1x fa-inverse"></i></span>
+                    <h4 class="section-heading"><strong>Confort y Seguridad</strong><br></h4>
+                    <p class="text-muted white">Somos conscientes en la calidad de aplicación en nuestra tecnología, el medio ambiente y los bolsillos de nuestra comunidad. Creando el confort y seguridad en su hogar tal como ustedes lo deseen realizando un traje a la medida para el<br>usuario final.<br></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase">Ruta de Instalación<br></h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-group timeline">
+                        <li class="list-group-item">
+                            <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/smart-living.jpg"></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="subheading">Agendamos el levantamiento<br></h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Programamos una cita contigo para saber las necesidades y así mismo poder realizar una propuesta de valor.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item timeline-inverted">
+                            <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/inteligente.jpg"></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="subheading">Visita del equipo&nbsp;<strong>EDOTEC para revisión en campo&nbsp;</strong><br></h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Revisamos la instalación eléctrica para determinar lo que necesitamos hacer para sacar el máximo de provecho a nuestra instalación domótica, también verificamos la red wifi para asegurar que los dispositivos tengan el alcance&nbsp; para su perfecta señal. La instalación es mínima, en caso de apagadores solamente verificar que tengamos un neutro. Toda la demás instalación no es invasiva.&nbsp;</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg"></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="subheading">Realización de propuesta domótica y cotización</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Teniendo el levantamiento trabajamos en un proyecto de valor basado en las necesidades. Cotización de dispositivo y de instalación de nuestros equipos<br><br></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item timeline-inverted">
+                            <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/programacion-casa-inteligente.jpg"></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="subheading">Instalación según el proyecto y programación del sistema</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Una vez autorizado el proyecto y los dispositivos listos para su instalación, vamos al sitio para instalar y programar todos los equipos así como dispositivos proyectados.&nbsp;<br>Capacitación de uso del sistema y programación de escenas y automatizaciones.&nbsp;&nbsp;</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item timeline-inverted">
+                            <div class="timeline-image">
+                                <h4>Vive la experiencia</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" style="background-image:url('assets/img/map-image.png');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase section-heading">Contactactanos</h2>
+                    <h3 class="text-muted section-subheading">Estamos a sus órdenes</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form id="contactForm" name="contactForm" novalidate="novalidate">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3"><input class="form-control" type="text" id="name" placeholder="Nombre *" required=""><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                <div class="form-group mb-3"><input class="form-control" type="email" id="email" placeholder="Email *" required=""><small class="form-text text-danger help-block lead"></small></div>
+                                <div class="form-group mb-3"><input class="form-control" type="tel" placeholder="Teléfono *" required=""><small class="form-text text-danger help-block lead"></small></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3"><textarea class="form-control" id="message" placeholder="Mensaje *" required=""></textarea><small class="form-text text-danger help-block lead"></small></div>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div><button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Enviar mensaje</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6"><span class="copyright">Copyright&nbsp;© ECOTEC 2022</span></div>
+                <div class="col-md-6">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item"></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="modal fade text-center portfolio-modal" role="dialog" tabindex="-1" id="portfolioModal1">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <h2 class="text-uppercase">Iluminación inteligente</h2>
+                                <p class="text-muted item-intro">Controla todas las luces de tus espacios</p><img class="img-fluid d-block mx-auto" src="assets/img/luz-adaptable.jpg" style="width: 100%;">
+                                <p>El control de luces se puede lograr con distintos dispositivos de todas la gamas a elegir según el alcance del proyecto, incluyendo como dispositivos básicos apagadores inteligentes de pared, bombillas inteligentes, tiras led, focos led y lamparas inteligentes.&nbsp;<br>Activación de escenas por comandos de voz o desde tu celular.<br>Encender, apagar, atenuar o incrementar brillo, cambiar colores, espacios fríos o cálidos.</p>
+                                <ul class="list-unstyled">
+                                    <li>Categorias:</li>
+                                    <li>Iluminación</li>
+                                    <li>Automatizaciones</li>
+                                    <li>Escenas</li>
+                                </ul><button class="btn btn-primary" type="button" data-bs-dismiss="modal"><i class="fa fa-times"></i><span>&nbsp;Cerrar</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade text-center portfolio-modal" role="dialog" tabindex="-1" id="portfolioModal2">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <h2 class="text-uppercase">Control de infrarrojos</h2>
+                                <p class="text-muted item-intro">Elimina los controles remotos</p><img class="img-fluid d-block mx-auto" src="assets/img/infrarrojos.jpg" style="width: 100%;">
+                                <p>Los dispositivos de infrarrojo te permiten eliminar todos los controles remotos para unificarlos en un dispositivo y en una sola aplicación.&nbsp; Estos dispositivos también pueden controlarse por medio de asistentes de voz como Alexa y el asistente de Google.<br>Controla aire acondicionado, TV, ventiladores, humidificadores, cortinas y todo lo que puedas usar con un control remoto.&nbsp;</p>
+                                <ul class="list-unstyled">
+                                    <li>Categoría:</li>
+                                    <li>Control de infrarrojos</li>
+                                    <li>Escenas</li>
+                                </ul><button class="btn btn-primary" type="button" data-bs-dismiss="modal"><i class="fa fa-times"></i><span>&nbsp;Cerrar</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade text-center portfolio-modal" role="dialog" tabindex="-1" id="portfolioModal3">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <h2 class="text-uppercase"><strong>Cortinas y cerraduras inteligentes</strong><br></h2>
+                                <p class="text-muted item-intro">Lorem ipsum dolor sit amet consectetur.</p><img class="img-fluid d-block mx-auto" src="assets/img/cerradura-smart.png" style="width: 465px;"><img class="img-fluid d-block mx-auto" src="assets/img/persianas-automaticas.jpg">
+                                <p>Controla tus cortinas abriendo y cerrándolas, también crea escenas en conjunto con otras aplicaciones como control de iluminación, clima, audio, video, etc.&nbsp; Crea escenarios donde se bajan o suben las cortinas dependiendo de la hora del día o del comando a utilizar por medio de voz o por aplicación móvil.<br>Escoge de un gran catálogo de cerraduras de todas las gamas que podemos instalar para abrir de manera remota y sin importar donde te encuentres. Da acceso a quien tu decidas.&nbsp;</p>
+                                <ul class="list-unstyled">
+                                    <li>Category:</li>
+                                    <li>Cortinas automáticas</li>
+                                    <li>Escenas</li>
+                                    <li>Automatizaciones</li>
+                                </ul><button class="btn btn-primary" type="button" data-bs-dismiss="modal"><i class="fa fa-times"></i><span>&nbsp;Cerrar</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade text-center portfolio-modal" role="dialog" tabindex="-1" id="portfolioModal4">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <h2 class="text-uppercase">Sensores</h2>
+                                <p class="text-muted item-intro">Tipos de sensores</p><img class="img-fluid d-block mx-auto" src="assets/img/sensor-movimiento.jpg">
+                                <p>Los sensores interactúan con el mundo exterior convirtiéndolos en digital interactuando con otros dispositivos y monitoreando esa información.<br>Algunos de los sensores son: Presencia, temperatura, humedad, proximidad, lluvia, gas, sonido, apertura de puertas y ventanas, barreras laser, de luz.<br></p>
+                                <ul class="list-unstyled">
+                                    <li>Categoría</li>
+                                    <li>Sensores</li>
+                                    <li>Automatización&nbsp;</li>
+                                    <li>Escenas</li>
+                                </ul><button class="btn btn-primary" type="button" data-bs-dismiss="modal"><i class="fa fa-times"></i>&nbsp;Cerrar<span></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade text-center portfolio-modal" role="dialog" tabindex="-1" id="portfolioModal5">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <h2 class="text-uppercase">Geolocalización y seguridad</h2>
+                                <p class="text-muted item-intro">Control de ubicaciones y cámaras</p><img class="img-fluid d-block mx-auto" src="assets/img/seguridad-alarmas.jpg">
+                                <p>Protege a tu familia localizándolos en tiempo real, vigila por medio de cámaras tu hogar y programamos alarmas por medio de vigilancia, sensores de puertas y ventanas.</p>
+                                <ul class="list-unstyled">
+                                    <li>Categorías:</li>
+                                    <li>CCTV</li>
+                                    <li>Geolocalización</li>
+                                    <li>Alarmas</li>
+                                    <li>Accesos</li>
+                                    <li>Automatización</li>
+                                </ul><button class="btn btn-primary" type="button" data-bs-dismiss="modal"><i class="fa fa-times"></i><span>&nbsp;Cerrar</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade text-center portfolio-modal" role="dialog" tabindex="-1" id="portfolioModal6">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <h2 class="text-uppercase"><strong>Control de consumos de agua, energía y gas</strong><br></h2>
+                                <p class="text-muted item-intro">Monitoreo de servicios</p><img class="img-fluid d-block mx-auto" src="assets/img/ahorrar-agua.jpg">
+                                <p>Monitorea el flujo de servicios líquidos para saber cual es tu consumo, se puede hacer cortes de suministro con automatizaciones y monitoreo de fugas.&nbsp;&nbsp;</p>
+                                <ul class="list-unstyled">
+                                    <li>Categorías:</li>
+                                    <li>Monitoreo</li>
+                                    <li>Servicios</li>
+                                    <li>Automatización</li>
+                                </ul><button class="btn btn-primary" type="button" data-bs-dismiss="modal"><i class="fa fa-times"></i><span>&nbsp;Cerrar</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/agency.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
+    <script src="assets/js/slider01.js"></script>
+</body>
+
+</html>
