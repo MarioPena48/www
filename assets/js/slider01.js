@@ -11,23 +11,23 @@ var app = new Vue({
                 sublineFirstLine: "Soluciones en automatización ",
                 sublineSecondLine: "Casas inteligentes",
                 sublineSecondLine: "luces inteligentes",
-                bgImg: "assets/img/iluminacion-inteligente-en-casa.jpg",
-                rectImg: "assets/img/iluminacion-inteligente-en-casa.jpg"
+                bgImg: "iluminacion-inteligente-en-casa.jpg",
+                rectImg: "iluminacion-inteligente-en-casa.jpg"
             },
             {
                 headlineFirstLine: "Nos adecuamos a los sistemas que ya tengas",
                 headlineSecondLine: "",
                 sublineFirstLine: "Instalación en pocos pasos",
                 sublineSecondLine: "Hardware y software propios",
-                bgImg: "assets/img/inteligencia-casa.jpg",
-                rectImg: "assets/img/inteligencia-casa.jpg"
+                bgImg: "inteligencia-casa.jpg",
+                rectImg: "inteligencia-casa.jpg"
             },
             {
                 headlineFirstLine: "Ecosistemas  inteligentes ",
                 headlineSecondLine: "",
                 sublineFirstLine: "automatizaciones y escenas",
-                bgImg: "assets/img/casas-inteligentes.jpg",
-                rectImg: "assets/img/casas-inteligentes.jpg"
+                bgImg: "casas-inteligentes.jpg",
+                rectImg: "casas-inteligentes.jpg"
             }
         ]
     },

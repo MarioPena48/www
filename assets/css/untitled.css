@@ -167,7 +167,6 @@
 
 .masthead {
   background: url("../../assets/img/casas-inteligentes.png") center / cover no-repeat, radial-gradient(black 51%, rgb(149,149,149) 100%, rgb(147,147,147) 100%, rgb(255,255,255) 100%);
-  width: 100%;
   back: scale(1.5);
 }
 
@@ -178,7 +177,7 @@
 .text-muted {
   --bs-text-opacity: 1;
   color: #292929;
-  padding: 30px;
+  padding: 10px;
   font-weight: 500;
   font-style: oblique;
 }
@@ -472,5 +471,22 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   padding: 1rem;
   background: rgba(156,156,156,0.27);
   border-radius: 15px;
+}
+
+section h2.section-heading, section .section-heading.h2 {
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.timeline > li.timeline-inverted > .timeline-panel {
+  float: right;
+  padding: 0 10px 0 100px;
+  text-align: left;
+}
+
+.portfolio-modal .modal-content h2, .portfolio-modal .modal-content .h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
 }
 
